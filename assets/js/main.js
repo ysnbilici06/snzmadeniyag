@@ -142,7 +142,7 @@ function renderLayout() {
       </div>
       <div class="footer-bottom">
         <span>© ${new Date().getFullYear()} SNZ Madeni Yağ &amp; Oto Market. <span data-en="All rights reserved.">Tüm hakları saklıdır.</span></span>
-        <span><a href="gizlilik.html" data-en="Privacy Policy &amp; KVKK">Gizlilik Politikası &amp; KVKK</a> · <a href="sitemap.xml" data-en="Sitemap">Site Haritası</a></span>
+        <span><a href="gizlilik.html" data-en="Privacy Policy &amp; KVKK">Gizlilik Politikası &amp; KVKK</a> · <a href="site-haritasi.html" data-en="Sitemap">Site Haritası</a></span>
       </div>
     </div>
   </footer>
@@ -192,6 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const key = el.dataset.site;
     if (key === "phone1" || key === "phone2") { el.href = tel(SITE[key]); if (!el.textContent.trim()) el.textContent = SITE[key]; }
     if (key === "whatsapp") el.href = waLink(el.dataset.msg || "Merhaba, bilgi almak istiyorum.");
+    if (key === "address") { el.textContent = SITE.address; el.dataset.en = SITE.addressEn; }
     if (key === "maps") el.href = SITE.mapsUrl;
     if (key === "directions") el.href = SITE.directionsUrl;
     if (key === "email") { el.href = "mailto:" + SITE.email; if (!el.textContent.trim()) el.textContent = SITE.email; }
