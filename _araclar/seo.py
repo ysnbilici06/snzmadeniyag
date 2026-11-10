@@ -9,6 +9,7 @@ from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_URL = "https://www.snzmadeniyag.com"   # TODO: gerçek alan adı
+BASE_PATH = "/snzmadeniyag/"                # GitHub Pages önizlemesi; kendi alan adında "/" yapın
 GSC_CODE = ""                                # Google Search Console doğrulama kodu (content="..." değeri)
 
 PHONE1, PHONE2 = "+90-543-488-22-53", "+90-541-334-22-51"
