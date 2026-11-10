@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Static corporate site (plain HTML/CSS/JS, no build step, no framework, no tests) for two neighbouring stores in an Ankara sanayi sitesi: **SNZ Madeni Yağ & Oto Market** and **SNZ Akü Market**. The site is bilingual, with Turkish as the source language and English via `data-en`. The user communicates in Turkish.
+Static corporate site (plain HTML/CSS/JS, no build step, no framework, no tests) for two neighbouring stores at Sehaş Arena İş Merkezi, 225. Cd. No:38 D Blok 1, Sincan Sanayi Sitesi, Sincan/Ankara: **SNZ Madeni Yağ & Oto Market** and **SNZ Akü Market**. The site is bilingual, with Turkish as the source language and English via `data-en`. The user communicates in Turkish.
 
 - Repo: `ysnbilici06/snzmadeniyag`, branch `main`. GitHub Pages serves it at https://ysnbilici06.github.io/snzmadeniyag/ and every push to `main` redeploys.
 - The planned domain `https://www.snzmadeniyag.com` is not bought yet. Canonicals, OG URLs and the sitemap already point at it.
@@ -26,7 +26,7 @@ Video re-encoding uses ffmpeg from `imageio_ffmpeg.get_ffmpeg_exe()` (libx264, `
 
 **Shared layout is injected by JS.** Each page has only `<div id="site-header">` and `<div id="site-footer">`. `assets/js/main.js` `renderLayout()` builds the header, nav (the `NAV` array), footer, floating buttons and the mobile bottom bar (`.mobile-bar`). To add a page, add it to `NAV` in main.js and to `PAGES` in `_araclar/seo.py`.
 
-**Contact data lives in one place.** The `SITE` object at the top of main.js holds phones, WhatsApp, email, address, `mapsUrl` and `googleReviewsUrl`. Markup uses placeholders that main.js fills in: `<a data-site="phone1|phone2|whatsapp|email|...">` and `<i data-icon="name">`, with SVGs taken from the `ICONS` map. Never hardcode phone numbers or addresses in the HTML. `seo.py` keeps its own copies (`PHONE1/2`, `STREET`, `HOURS`) for JSON-LD, so keep both in sync.
+**Contact data lives in one place.** The `SITE` object at the top of main.js holds phones, the full address plus a short `addressShort` for the top bar, WhatsApp, email, address, `mapsUrl` and `googleReviewsUrl`. Markup uses placeholders that main.js fills in: `<a data-site="phone1|phone2|whatsapp|email|...">` and `<i data-icon="name">`, with SVGs taken from the `ICONS` map. Never hardcode phone numbers or addresses in the HTML. `seo.py` keeps its own copies (`PHONE1/2`, `STREET`, `HOURS`) for JSON-LD, so keep both in sync.
 
 **i18n.** Turkish text sits in the markup. Translations use these attributes:
 - `data-en` holds the English innerHTML.
@@ -68,7 +68,6 @@ Then add a `CNAME` file and rerun `seo.py` and `og.py`.
 
 ## Open TODOs (waiting on owner input)
 
-- Full address: `SITE.address`/`mapQuery` and `seo.py` `STREET`.
 - Real email.
 - Google Maps share links (`SITE.mapsUrl`) and a two-store map visual for iletisim.html.
 - `googleReviewsUrl` and real reviews.

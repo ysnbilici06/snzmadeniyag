@@ -62,7 +62,7 @@ JOBS = [
  ("galeri/ga2.webp", "og-galeri.jpg", "Galeri", "Mağaza, atölye ve saha fotoğrafları"),
  ("galeri/g53.webp", "og-markalar.jpg", "Dünya Markaları Tek Çatı Altında", "Castrol · Shell · Mobil · Motul · Turbo Akü"),
  ("magaza-ic.webp", "og-sss.jpg", "Sıkça Sorulan Sorular", "Motor yağı ve akü hakkında net cevaplar"),
- ("bina-genis.webp", "og-iletisim.jpg", "İletişim ve Yol Tarifi", "D Blok, Ankara · Pzt–Cmt 08:30–19:00"),
+ ("bina-genis.webp", "og-iletisim.jpg", "İletişim ve Yol Tarifi", "Sincan Sanayi Sitesi · Pzt–Cmt 08:30–19:00"),
 ]
 for j in JOBS: og(*j)
 

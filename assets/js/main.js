@@ -8,12 +8,14 @@ const SITE = {
   phone2: "0541 334 22 51",
   whatsapp: "905434882253",           // başında 90, boşluksuz
   email: "info@snzmadeniyag.com",     // TODO: gerçek e-posta
-  address: "D Blok, Sanayi Sitesi, Ankara", // TODO: tam adres
-  addressEn: "Block D, Industrial Estate, Ankara, Türkiye",
-  mapQuery: "SNZ Madeni Yağ Oto Market Ankara", // TODO: harita için tam adres
+  address: "Sehaş Arena İş Merkezi, Ahi Evran, 225. Cd. Sincan Sanayi Sitesi No:38D Blok1, Sincan/Ankara",
+  addressShort: "Sehaş Arena İş Merkezi, Sincan Sanayi Sitesi, Ankara", // üst bar için kısa hali
+  addressShortEn: "Sehaş Arena Business Center, Sincan Industrial Estate, Ankara",
+  addressEn: "Sehaş Arena Business Center, Ahi Evran, 225th St., Sincan Industrial Estate No:38D Block 1, Sincan/Ankara, Türkiye",
+  mapQuery: "Sehaş Arena İş Merkezi, 225. Cd. No:38, Sincan Sanayi Sitesi, Sincan/Ankara",
   hours: { weekdays: "08:30 – 19:00", saturday: "08:30 – 19:00", sunday: "Kapalı", sundayEn: "Closed" },
   instagram: "#",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("SNZ Madeni Yağ Oto Market Ankara"), // TODO: Google Maps paylaşım linki
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Sehaş Arena İş Merkezi, 225. Cd. No:38, Sincan Sanayi Sitesi, Sincan/Ankara"), // TODO: Google Maps paylaşım linki
   googleReviewsUrl: "",  // TODO: Google işletme profilindeki "Yorum yaz" linki
 };
 
@@ -80,8 +82,8 @@ function renderLayout() {
     <div class="container">
       <div class="topbar-info">
         <span>${svg("phone")}<a href="${tel(SITE.phone1)}">${SITE.phone1}</a></span>
-        <span class="hide-sm">${svg("pin")}<span data-en="${SITE.addressEn}">${SITE.address}</span></span>
-        <span class="hide-sm">${svg("clock")}<span data-en="Mon – Sat: ${SITE.hours.weekdays}">Pzt – Cmt: ${SITE.hours.weekdays}</span></span>
+        <span class="hide-sm">${svg("pin")}<a href="${SITE.mapsUrl}" target="_blank" rel="noopener" data-en="${SITE.addressShortEn}">${SITE.addressShort}</a></span>
+        <span class="hide-sm hide-md">${svg("clock")}<span data-en="Mon – Sat: ${SITE.hours.weekdays}">Pzt – Cmt: ${SITE.hours.weekdays}</span></span>
       </div>
       <div class="lang-switch" role="group" aria-label="Dil / Language">
         <button type="button" data-lang="tr">TR</button><button type="button" data-lang="en">EN</button>

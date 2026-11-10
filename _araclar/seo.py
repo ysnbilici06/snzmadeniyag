@@ -13,8 +13,8 @@ BASE_PATH = "/snzmadeniyag/"                # GitHub Pages önizlemesi; kendi al
 GSC_CODE = ""                                # Google Search Console doğrulama kodu (content="..." değeri)
 
 PHONE1, PHONE2 = "+90-543-488-22-53", "+90-541-334-22-51"
-STREET = "D Blok, Sanayi Sitesi"             # TODO: tam adres
-CITY, REGION = "Ankara", "Ankara"
+STREET = "Sehaş Arena İş Merkezi, Ahi Evran, 225. Cd. Sincan Sanayi Sitesi No:38D Blok1"
+CITY, REGION = "Sincan", "Ankara"
 HOURS = [{"@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           "opens": "08:30", "closes": "19:00"}]
@@ -22,10 +22,10 @@ HOURS = [{"@type": "OpeningHoursSpecification",
 # sayfa: (başlık, açıklama, og görseli, işaret yolu adı, indexlensin mi, sitemap önceliği)
 PAGES = {
  "index.html": ("SNZ Madeni Yağ & Akü Market Ankara | Motor Yağı, Akü, AdBlue",
-   "Ankara D Blok'ta SNZ Madeni Yağ & Oto Market ve SNZ Akü Market: Castrol, Shell, Mobil, Motul, Petrol Ofisi motor yağları, aküler, hidrolik ve gres yağları, AdBlue. Yağ değişimi ve ücretsiz akü testi.",
+   "Ankara Sincan Sanayi Sitesi'nde SNZ Madeni Yağ & Oto Market ve SNZ Akü Market: Castrol, Shell, Mobil, Motul, Petrol Ofisi motor yağları, aküler, hidrolik ve gres yağları, AdBlue. Yağ değişimi ve ücretsiz akü testi.",
    "og-index.jpg", None, True, "1.0"),
  "hakkimizda.html": ("Hakkımızda | SNZ Madeni Yağ & Akü Market Ankara",
-   "SNZ Madeni Yağ & Oto Market ve SNZ Akü Market: Ankara D Blok'ta yan yana iki mağaza. Orijinal ürün, uzman tavsiye ve uygun fiyatla madeni yağ ve akü.",
+   "SNZ Madeni Yağ & Oto Market ve SNZ Akü Market: Sincan Sanayi Sitesi, Sehaş Arena İş Merkezi'nde yan yana iki mağaza. Orijinal ürün, uzman tavsiye ve uygun fiyatla madeni yağ ve akü.",
    "og-hakkimizda.jpg", "Hakkımızda", True, "0.8"),
  "urunler.html": ("Ürünler: Motor Yağı, Akü, Gres, AdBlue | SNZ Ankara",
    "Tam sentetik ve mineral motor yağları, binek ve ağır vasıta aküleri, hidrolik, şanzıman ve gres yağları, AdBlue, antifriz ve bakım ürünleri. Ankara'da stoktan teslim.",
@@ -46,7 +46,7 @@ PAGES = {
    "Hangi motor yağı uygun, yağ ne sıklıkla değişir, akü ne zaman değişmeli, AdBlue nedir? Motor yağı ve akü hakkında kısa ve net cevaplar.",
    "og-sss.jpg", "SSS", True, "0.6"),
  "iletisim.html": ("İletişim ve Yol Tarifi | SNZ Madeni Yağ & Akü Market Ankara",
-   "SNZ Madeni Yağ & Oto Market ve SNZ Akü Market adres, telefon, WhatsApp ve çalışma saatleri. D Blok, Ankara. Pzt–Cmt 08:30–19:00.",
+   "SNZ Madeni Yağ & Oto Market ve SNZ Akü Market adres, telefon, WhatsApp ve çalışma saatleri. Sehaş Arena İş Merkezi, Sincan Sanayi Sitesi, Ankara. Pzt–Cmt 08:30–19:00.",
    "og-iletisim.jpg", "İletişim", True, "0.8"),
  "gizlilik.html": ("Gizlilik Politikası ve KVKK Aydınlatma Metni | SNZ",
    "SNZ Madeni Yağ Ltd. Şti. KVKK aydınlatma metni ve çerez politikası: hangi verileri, hangi amaçla işlediğimiz ve haklarınız.",
