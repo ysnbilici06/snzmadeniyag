@@ -330,8 +330,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const en = currentLang() === "en";
     const note = d.message ? "\n\n" + d.message : "";
     const msg = en
-      ? `Hello, I'm ${d.name}.\nPhone: ${d.phone}\nSubject: ${d.subject}\nVehicle: ${d.vehicle || "-"}${note}`
-      : `Merhaba, ben ${d.name}.\nTelefon: ${d.phone}\nKonu: ${d.subject}\nAraç: ${d.vehicle || "-"}${note}`;
+      ? `Hello, I'm ${d.name}.\nSubject: ${d.subject}\nVehicle: ${d.vehicle || "-"}${note}`
+      : `Merhaba, ben ${d.name}.\nKonu: ${d.subject}\nAraç: ${d.vehicle || "-"}${note}`;
     window.open(waLink(msg), "_blank", "noopener");
     location.href = "tesekkurler.html";
   });
