@@ -95,7 +95,7 @@ p { margin: 0 0 1em; }
 .topbar-info span { white-space: nowrap; }
 @media (max-width: 1080px) { .topbar-info span.hide-md { display: none; } }
 .topbar svg { width: 15px; height: 15px; color: var(--red); }
-.tb-sep { font-style: normal; color: #4a525c; margin: 0 4px; }
+.tb-sep { font-style: normal; margin: 0 6px; }
 
 .lang-switch { display: inline-flex; border: 1px solid #3a424b; border-radius: 6px; overflow: hidden; }
 .lang-switch button {
