@@ -107,7 +107,7 @@ def build_head(page, body):
         ld = ('\n  <script type="application/ld+json">\n  '
               + json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1).replace("\n", "\n  ")
               + "\n  </script>")
-    base = '\n  <base href="/">' if page == "404.html" else ""
+    base = f'\n  <base href="{BASE_PATH}">' if page == "404.html" else ""
     preload = ('\n  <link rel="preload" as="image" href="assets/img/hero.webp" fetchpriority="high">'
                if page == "index.html" else
                '\n  <link rel="preload" as="image" href="assets/img/page-hero.webp">' if crumb else "")
