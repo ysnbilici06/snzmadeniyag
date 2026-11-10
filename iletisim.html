@@ -198,7 +198,7 @@
         <h3 data-en="Send Us a Message">Bize Mesaj Gönderin</h3>
         <p style="color:var(--muted)" data-en="Fill in the form — your message will open in WhatsApp, ready to send.">Formu doldurun, mesajınız WhatsApp'ta gönderilmeye hazır şekilde açılacak.</p>
         <div class="form-row">
-          <div class="field"><label for="name" data-en="Full Name *">Ad Soyad *</label><input id="name" name="name" required data-en-ph="Your name" placeholder="Adınız soyadınız"></div>
+          <div class="field"><label for="name" data-en="Your Name *">Adınız *</label><input id="name" name="name" required autocomplete="given-name" data-en-ph="Your name" placeholder="Adınız"></div>
           <div class="field"><label for="phone" data-en="Phone *">Telefon *</label><input id="phone" name="phone" type="tel" required placeholder="05xx xxx xx xx"></div>
         </div>
         <div class="form-row">
@@ -214,9 +214,9 @@
           </div>
           <div class="field"><label for="vehicle" data-en="Vehicle (make / model / year)">Araç (marka / model / yıl)</label><input id="vehicle" name="vehicle" data-en-ph="e.g. VW Passat 2018 1.6 TDI" placeholder="örn. VW Passat 2018 1.6 TDI"></div>
         </div>
-        <div class="field"><label for="message" data-en="Message *">Mesajınız *</label><textarea id="message" name="message" required data-en-ph="How can we help?" placeholder="Size nasıl yardımcı olabiliriz?"></textarea></div>
+        <div class="field"><label for="message" data-en="Message">Mesajınız</label><textarea id="message" name="message" data-en-ph="How can we help?" placeholder="Size nasıl yardımcı olabiliriz?"></textarea></div>
         <button type="submit" class="btn btn-whatsapp"><i data-icon="whatsapp"></i><span data-en="Send via WhatsApp">WhatsApp ile Gönder</span></button>
-        <p class="form-note" data-en="Your information is only used to answer your request.">Bilgileriniz yalnızca talebinize dönüş yapmak için kullanılır.</p>
+        <p class="form-note" data-en="Your name and phone number are only used to get back to you. <a href=&quot;gizlilik.html&quot;>Privacy policy</a>">Adınız ve telefonunuz yalnızca size dönüş yapmak için kullanılır. <a href="gizlilik.html">Gizlilik politikası</a></p>
       </form>
     </div>
   </section>

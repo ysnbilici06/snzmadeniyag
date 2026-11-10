@@ -52,7 +52,7 @@ PAGES = {
    "SNZ Madeni Yağ & Oto Market ve SNZ Akü Market adres, telefon, WhatsApp ve çalışma saatleri. Sehaş Arena İş Merkezi, Sincan Sanayi Sitesi, Ankara. Pzt–Cmt 08:30–19:00.",
    "og-iletisim.jpg", "İletişim", True, "0.8"),
  "gizlilik.html": ("Gizlilik Politikası ve KVKK Aydınlatma Metni | SNZ",
-   "SNZ Madeni Yağ Ltd. Şti. KVKK aydınlatma metni ve çerez politikası: hangi verileri, hangi amaçla işlediğimiz ve haklarınız.",
+   "SNZ Madeni Yağ Ltd. Şti. kısa KVKK aydınlatma metni: yalnızca adınızı ve telefonunuzu size dönüş yapmak için alırız; satmaz, paylaşmayız.",
    "og-index.jpg", "Gizlilik Politikası ve KVKK", True, "0.2"),
  "site-haritasi.html": ("Site Haritası | SNZ Madeni Yağ & Akü Market",
    "SNZ Madeni Yağ & Akü Market internet sitesindeki tüm sayfalar: ürünler, hizmetler, örnek işler, galeri, SSS ve iletişim.",

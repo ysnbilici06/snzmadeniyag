@@ -320,6 +320,7 @@ p { margin: 0 0 1em; }
 .field textarea { min-height: 130px; resize: vertical; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--red); background: #fff; }
 .form-note { font-size: .85rem; color: var(--muted); margin: 14px 0 0; }
+.form-note a { color: var(--red); font-weight: 600; }
 .kroki { margin: 0 0 24px; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-lg); background: var(--ink); }
 .kroki-img { display: block; overflow: hidden; }
 .kroki-img img { width: 100%; display: block; transition: transform .6s; }
