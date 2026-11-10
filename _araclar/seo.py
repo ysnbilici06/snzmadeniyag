@@ -4,7 +4,7 @@ Tüm sayfaların <head> bölümünü, sitemap.xml ve robots.txt dosyalarını ü
 Alan adı değişirse yalnızca SITE_URL'i güncelleyip çalıştırın:
     python _araclar/seo.py
 """
-import json, os, re, html
+import json, os, re, html, hashlib
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -64,6 +64,10 @@ PAGES = {
    "Aradığınız sayfa bulunamadı. Ana sayfaya, ürünlere veya iletişim sayfasına dönebilirsiniz.",
    "og-index.jpg", None, False, None),
 }
+
+def ver(rel):
+    """Dosya içeriğinden kısa sürüm kodu: dosya değişince tarayıcı yenisini indirir."""
+    return hashlib.md5(open(os.path.join(ROOT, rel), "rb").read()).hexdigest()[:8]
 
 def url(page):
     return SITE_URL + "/" + ("" if page == "index.html" else page)
@@ -149,7 +153,7 @@ def build_head(page, body):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">{preload}{ld}
+  <link rel="stylesheet" href="assets/css/style.css?v={ver('assets/css/style.css')}">{preload}{ld}
 </head>'''
 
 def main():
@@ -157,7 +161,8 @@ def main():
         p = os.path.join(ROOT, page)
         s = open(p, encoding="utf-8").read()
         s = re.sub(r"<head>.*?</head>", lambda m: build_head(page, s), s, count=1, flags=re.S)
-        s = s.replace('<script src="assets/js/main.js"></script>', '<script src="assets/js/main.js" defer></script>')
+        s = re.sub(r'<script src="assets/js/main\.js(\?v=\w+)?"( defer)?></script>',
+                   f'<script src="assets/js/main.js?v={ver("assets/js/main.js")}" defer></script>', s)
         # Boyutu bilinen görsellere width/height ve decoding ekle (CLS'yi önler)
         def dims(m):
             tag = m.group(0)
