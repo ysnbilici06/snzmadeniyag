@@ -1,0 +1,11 @@
+# Ham kaynak fotoğraflar (siteye işlenmiş halleri assets/ içinde)
+foto/
+*.DNG
+*.dng
+
+# Sistem / editör
+Thumbs.db
+desktop.ini
+.DS_Store
+__pycache__/
+.vscode/

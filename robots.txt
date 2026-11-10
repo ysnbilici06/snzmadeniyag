@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /tesekkurler.html
+Disallow: /foto/
+Disallow: /_araclar/
+
+Sitemap: https://www.snzmadeniyag.com/sitemap.xml
