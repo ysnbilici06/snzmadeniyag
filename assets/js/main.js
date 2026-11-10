@@ -82,7 +82,7 @@ function renderLayout() {
   <div class="topbar">
     <div class="container">
       <div class="topbar-info">
-        <span>${svg("phone")}<a href="${tel(SITE.phone1)}">${SITE.phone1}</a></span>
+        <span class="tb-phones">${svg("phone")}<a href="${tel(SITE.phone1)}">${SITE.phone1}</a><i class="tb-sep">|</i><a href="${tel(SITE.phone2)}">${SITE.phone2}</a></span>
         <span class="hide-sm">${svg("pin")}<a href="${SITE.mapsUrl}" target="_blank" rel="noopener" data-en="${SITE.addressShortEn}">${SITE.addressShort}</a></span>
         <span class="hide-sm hide-md">${svg("clock")}<span data-en="Mon – Sat: ${SITE.hours.weekdays}">Pzt – Cmt: ${SITE.hours.weekdays}</span></span>
       </div>

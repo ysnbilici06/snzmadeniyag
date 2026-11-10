@@ -95,6 +95,7 @@ p { margin: 0 0 1em; }
 .topbar-info span { white-space: nowrap; }
 @media (max-width: 1080px) { .topbar-info span.hide-md { display: none; } }
 .topbar svg { width: 15px; height: 15px; color: var(--red); }
+.tb-sep { font-style: normal; color: #4a525c; margin: 0 4px; }
 
 .lang-switch { display: inline-flex; border: 1px solid #3a424b; border-radius: 6px; overflow: hidden; }
 .lang-switch button {
@@ -589,6 +590,15 @@ p { margin: 0 0 1em; }
   .logo-text { font-size: .95rem; }
   .logo-text small { font-size: .68rem; letter-spacing: .3px; }
   .topbar-info span:not(:first-child) { display: none; }
+  .topbar { font-size: .8rem; }
+  .topbar-info .tb-phones { gap: 4px; }
+  .tb-sep { margin: 0 2px; }
+}
+@media (max-width: 380px) {
+  .topbar { font-size: .74rem; }
+  .topbar .container { gap: 8px; }
+  .tb-phones svg { display: none; }
+  .lang-switch button { padding: 4px 8px; }
   .hero .btn { width: 100%; justify-content: center; }
   .map { height: 320px; }
   .gallery { columns: 2; column-gap: 10px; }
