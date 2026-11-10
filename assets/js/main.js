@@ -328,9 +328,10 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const d = Object.fromEntries(new FormData(form));
     const en = currentLang() === "en";
+    const note = d.message ? "\n\n" + d.message : "";
     const msg = en
-      ? `Hello, I'm ${d.name}.\nPhone: ${d.phone}\nSubject: ${d.subject}\nVehicle: ${d.vehicle || "-"}\n\n${d.message}`
-      : `Merhaba, ben ${d.name}.\nTelefon: ${d.phone}\nKonu: ${d.subject}\nAraç: ${d.vehicle || "-"}\n\n${d.message}`;
+      ? `Hello, I'm ${d.name}.\nPhone: ${d.phone}\nSubject: ${d.subject}\nVehicle: ${d.vehicle || "-"}${note}`
+      : `Merhaba, ben ${d.name}.\nTelefon: ${d.phone}\nKonu: ${d.subject}\nAraç: ${d.vehicle || "-"}${note}`;
     window.open(waLink(msg), "_blank", "noopener");
     location.href = "tesekkurler.html";
   });
