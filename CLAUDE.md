@@ -18,6 +18,7 @@ python -m http.server 5500                  # local preview (from repo root)
 python -I -X utf8 _araclar/seo.py           # regenerate every page <head>, sitemap.xml, robots.txt
 python -I -X utf8 _araclar/og.py            # regenerate OG images (assets/img/og/*.jpg), favicons, logo.png
 python -I -X utf8 _araclar/optimize.py      # convert new assets/img/**/*.jpg to WebP and rewrite references
+python -I -X utf8 _araclar/kroki.py         # foto/adreskroki.png -> assets/img/kroki.webp + kroki-m.webp (contact-page map sketch)
 ```
 
 Video re-encoding uses ffmpeg from `imageio_ffmpeg.get_ffmpeg_exe()` (libx264, `-movflags +faststart`, crf ~29).
@@ -69,6 +70,5 @@ Then add a `CNAME` file and rerun `seo.py` and `og.py`.
 ## Open TODOs (waiting on owner input)
 
 - Real email.
-- Google Maps share links (`SITE.mapsUrl`) and a two-store map visual for iletisim.html.
-- `googleReviewsUrl` and real reviews.
+- Real reviews for `REVIEWS` (Google profile showed 4.9 from 13 reviews on 2026-11-10).
 - Domain and Search Console code.

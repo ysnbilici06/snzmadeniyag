@@ -15,6 +15,9 @@ GSC_CODE = ""                                # Google Search Console doğrulama 
 PHONE1, PHONE2 = "+90-543-488-22-53", "+90-541-334-22-51"
 STREET = "Sehaş Arena İş Merkezi, Ahi Evran, 225. Cd. Sincan Sanayi Sitesi No:38D Blok1"
 CITY, REGION = "Sincan", "Ankara"
+POSTAL = "06935"
+GEO = {"@type": "GeoCoordinates", "latitude": 39.9672737, "longitude": 32.562601}
+MAP_URL = "https://www.google.com/maps/place/SNZ+MADEN%C4%B0+YA%C4%9E/@39.9672737,32.562601,17z/data=!4m6!3m5!1s0x14d33120fec1f999:0xb1a20a6dd8406cb8!8m2!3d39.9672737!4d32.562601!16s%2Fg%2F11xzzy9mgh"
 HOURS = [{"@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           "opens": "08:30", "closes": "19:00"}]
@@ -64,18 +67,18 @@ def url(page):
 
 def stores():
     addr = {"@type": "PostalAddress", "streetAddress": STREET, "addressLocality": CITY,
-            "addressRegion": REGION, "addressCountry": "TR"}
+            "addressRegion": REGION, "postalCode": POSTAL, "addressCountry": "TR"}
     org = {"@type": "Organization", "@id": SITE_URL + "/#org", "name": "SNZ Madeni Yağ Ltd. Şti.",
            "url": SITE_URL + "/", "logo": SITE_URL + "/assets/img/logo.png",
            "telephone": PHONE1, "sameAs": []}
     s1 = {"@type": "AutoPartsStore", "@id": SITE_URL + "/#madeni-yag", "name": "SNZ Madeni Yağ & Oto Market",
           "image": SITE_URL + "/assets/img/bina.webp", "url": SITE_URL + "/", "telephone": PHONE1,
-          "address": addr, "openingHoursSpecification": HOURS, "priceRange": "₺₺",
+          "address": addr, "geo": GEO, "hasMap": MAP_URL, "openingHoursSpecification": HOURS, "priceRange": "₺₺",
           "parentOrganization": {"@id": SITE_URL + "/#org"},
           "description": "Motor yağı, hidrolik ve gres yağları, AdBlue, antifriz; yağ değişimi ve sahada endüstriyel yağlama."}
     s2 = {"@type": "AutoPartsStore", "@id": SITE_URL + "/#aku-market", "name": "SNZ Akü Market",
           "image": SITE_URL + "/assets/img/galeri/ga9.webp", "url": SITE_URL + "/", "telephone": PHONE2,
-          "address": addr, "openingHoursSpecification": HOURS, "priceRange": "₺₺",
+          "address": addr, "geo": GEO, "hasMap": MAP_URL, "openingHoursSpecification": HOURS, "priceRange": "₺₺",
           "parentOrganization": {"@id": SITE_URL + "/#org"},
           "description": "Binek, ticari ve ağır vasıta aküleri; ücretsiz akü testi ve montaj."}
     return [org, s1, s2]

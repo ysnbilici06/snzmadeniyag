@@ -12,11 +12,12 @@ const SITE = {
   addressShort: "Sehaş Arena İş Merkezi, Sincan Sanayi Sitesi, Ankara", // üst bar için kısa hali
   addressShortEn: "Sehaş Arena Business Center, Sincan Industrial Estate, Ankara",
   addressEn: "Sehaş Arena Business Center, Ahi Evran, 225th St., Sincan Industrial Estate No:38D Block 1, Sincan/Ankara, Türkiye",
-  mapQuery: "Sehaş Arena İş Merkezi, 225. Cd. No:38, Sincan Sanayi Sitesi, Sincan/Ankara",
+  mapQuery: "39.9672737,32.562601",   // dükkânın koordinatı (gömülü harita)
   hours: { weekdays: "08:30 – 19:00", saturday: "08:30 – 19:00", sunday: "Kapalı", sundayEn: "Closed" },
   instagram: "#",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Sehaş Arena İş Merkezi, 225. Cd. No:38, Sincan Sanayi Sitesi, Sincan/Ankara"), // TODO: Google Maps paylaşım linki
-  googleReviewsUrl: "",  // TODO: Google işletme profilindeki "Yorum yaz" linki
+  mapsUrl: "https://www.google.com/maps/place/SNZ+MADEN%C4%B0+YA%C4%9E/@39.9672737,32.562601,17z/data=!4m6!3m5!1s0x14d33120fec1f999:0xb1a20a6dd8406cb8!8m2!3d39.9672737!4d32.562601!16s%2Fg%2F11xzzy9mgh",  // Google Haritalar işletme kaydı
+  directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=39.9672737,32.562601",
+  googleReviewsUrl: "https://www.google.com/maps/place/SNZ+MADEN%C4%B0+YA%C4%9E/@39.9672737,32.562601,17z/data=!4m6!3m5!1s0x14d33120fec1f999:0xb1a20a6dd8406cb8!8m2!3d39.9672737!4d32.562601!16s%2Fg%2F11xzzy9mgh",  // Google yorumları (işletme kaydı)
 };
 
 /* ---------- Müşteri yorumları ----------
@@ -152,7 +153,7 @@ function renderLayout() {
   <nav class="mobile-bar" aria-label="Hızlı iletişim">
     <a href="${tel(SITE.phone1)}" class="mb-call">${svg("phone")}<span data-en="Call">Ara</span></a>
     <a href="${waLink("Merhaba, bilgi almak istiyorum.")}" target="_blank" rel="noopener" class="mb-wa">${WA_ICON}<span>WhatsApp</span></a>
-    <a href="${SITE.mapsUrl}" target="_blank" rel="noopener" class="mb-map">${svg("pin")}<span data-en="Directions">Yol Tarifi</span></a>
+    <a href="${SITE.directionsUrl}" target="_blank" rel="noopener" class="mb-map">${svg("pin")}<span data-en="Directions">Yol Tarifi</span></a>
   </nav>`;
 
   document.getElementById("site-header").outerHTML = header;
@@ -191,10 +192,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const key = el.dataset.site;
     if (key === "phone1" || key === "phone2") { el.href = tel(SITE[key]); if (!el.textContent.trim()) el.textContent = SITE[key]; }
     if (key === "whatsapp") el.href = waLink(el.dataset.msg || "Merhaba, bilgi almak istiyorum.");
+    if (key === "maps") el.href = SITE.mapsUrl;
+    if (key === "directions") el.href = SITE.directionsUrl;
     if (key === "email") { el.href = "mailto:" + SITE.email; if (!el.textContent.trim()) el.textContent = SITE.email; }
   });
   document.querySelectorAll("[data-map]").forEach((el) => {
-    el.src = "https://maps.google.com/maps?q=" + encodeURIComponent(SITE.mapQuery) + "&z=15&output=embed";
+    el.src = "https://maps.google.com/maps?q=" + encodeURIComponent(SITE.mapQuery) + "&z=17&output=embed";
   });
 
   // İletişim sayfası: adres ve saatler
