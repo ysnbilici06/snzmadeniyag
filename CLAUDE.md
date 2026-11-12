@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Static corporate site (plain HTML/CSS/JS, no build step, no framework, no tests) for two neighbouring stores at Sehaş Arena İş Merkezi, 225. Cd. No:38 D Blok 1, Sincan Sanayi Sitesi, Sincan/Ankara: **SNZ Madeni Yağ & Oto Market** and **SNZ Akü Market**. The site is bilingual, with Turkish as the source language and English via `data-en`. The user communicates in Turkish.
 
 - Repo: `ysnbilici06/snzmadeniyag`, branch `main`. GitHub Pages serves it at https://ysnbilici06.github.io/snzmadeniyag/ and every push to `main` redeploys.
-- The planned domain `https://www.snzmadeniyag.com` is not bought yet. Canonicals, OG URLs and the sitemap already point at it.
+- Domain `https://www.snzmadeniyag.com` (registered at Natro, DNS: 4 GitHub A records + `www` CNAME). The `CNAME` file in the repo root sets the Pages custom domain.
 
 ## Commands
 
@@ -70,4 +70,4 @@ Then add a `CNAME` file and rerun `seo.py` and `og.py`.
 ## Open TODOs (waiting on owner input)
 
 - Real reviews for `REVIEWS` (Google profile showed 4.9 from 13 reviews on 2026-11-10).
-- Domain and Search Console code.
+- Search Console code (domain www.snzmadeniyag.com is live via CNAME since 2026-11-12, registrar Natro).
