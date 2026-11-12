@@ -69,6 +69,5 @@ Then add a `CNAME` file and rerun `seo.py` and `og.py`.
 
 ## Open TODOs (waiting on owner input)
 
-- Real email.
 - Real reviews for `REVIEWS` (Google profile showed 4.9 from 13 reviews on 2026-11-10).
 - Domain and Search Console code.
