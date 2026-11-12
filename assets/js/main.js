@@ -182,6 +182,24 @@ function setLang(lang) {
 }
 const currentLang = () => document.documentElement.lang === "en" ? "en" : "tr";
 
+function showToast(msg) {
+  let t = document.getElementById("snz-toast");
+  if (!t) {
+    t = document.createElement("div");
+    t.id = "snz-toast";
+    t.setAttribute("role", "status");
+    t.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;" +
+      "background:#16191d;color:#fff;padding:12px 18px;border-radius:10px;font-weight:600;font-size:15px;" +
+      "box-shadow:0 6px 24px rgba(0,0,0,.3);max-width:calc(100% - 32px);text-align:center;" +
+      "border-left:4px solid #f5c518;transition:opacity .3s;opacity:0;pointer-events:none";
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  requestAnimationFrame(() => (t.style.opacity = "1"));
+  clearTimeout(t._h);
+  t._h = setTimeout(() => (t.style.opacity = "0"), 3500);
+}
+
 /* ---------- Başlat ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   renderLayout();
@@ -217,6 +235,19 @@ document.addEventListener("DOMContentLoaded", () => {
   setLang(saved);
   document.querySelectorAll(".lang-switch button").forEach((b) =>
     b.addEventListener("click", () => setLang(b.dataset.lang)));
+
+  // E-posta: bilgisayarda e-posta programı yoksa mailto hiçbir şey açmaz;
+  // bu yüzden tıklanınca adresi panoya da kopyala ve bildirim göster.
+  document.addEventListener("click", (ev) => {
+    const a = ev.target.closest('a[href^="mailto:"]');
+    if (!a) return;
+    const done = () => showToast(currentLang() === "en"
+      ? "Email address copied: " + SITE.email
+      : "E-posta adresi kopyalandı: " + SITE.email);
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(SITE.email).then(done, () => {});
+    }
+  });
 
   // Mobil menü
   const header = document.getElementById("header");
