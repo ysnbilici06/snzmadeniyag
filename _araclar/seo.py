@@ -13,6 +13,7 @@ BASE_PATH = "/snzmadeniyag/"                # GitHub Pages önizlemesi; kendi al
 GSC_CODE = ""                                # Google Search Console doğrulama kodu (content="..." değeri)
 
 PHONE1, PHONE2 = "+90-543-488-22-53", "+90-541-334-22-51"
+EMAIL = "snzmadeniyag@hotmail.com"
 STREET = "Sehaş Arena İş Merkezi, Ahi Evran, 225. Cd. Sincan Sanayi Sitesi No:38D Blok1"
 CITY, REGION = "Sincan", "Ankara"
 POSTAL = "06935"
@@ -77,7 +78,7 @@ def stores():
             "addressRegion": REGION, "postalCode": POSTAL, "addressCountry": "TR"}
     org = {"@type": "Organization", "@id": SITE_URL + "/#org", "name": "SNZ Madeni Yağ Ltd. Şti.",
            "url": SITE_URL + "/", "logo": SITE_URL + "/assets/img/logo.png",
-           "telephone": PHONE1, "sameAs": []}
+           "telephone": PHONE1, "email": EMAIL, "sameAs": []}
     s1 = {"@type": "AutoPartsStore", "@id": SITE_URL + "/#madeni-yag", "name": "SNZ Madeni Yağ & Oto Market",
           "image": SITE_URL + "/assets/img/bina.webp", "url": SITE_URL + "/", "telephone": PHONE1,
           "address": addr, "geo": GEO, "hasMap": MAP_URL, "openingHoursSpecification": HOURS, "priceRange": "₺₺",

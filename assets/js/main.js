@@ -7,7 +7,7 @@ const SITE = {
   phone1: "0543 488 22 53",
   phone2: "0541 334 22 51",
   whatsapp: "905434882253",           // başında 90, boşluksuz
-  email: "info@snzmadeniyag.com",     // TODO: gerçek e-posta
+  email: "snzmadeniyag@hotmail.com",
   address: "Sehaş Arena İş Merkezi, Ahi Evran, 225. Cd. Sincan Sanayi Sitesi No:38D Blok1, Sincan/Ankara",
   addressShort: "Sehaş Arena İş Merkezi, Sincan Sanayi Sitesi, Ankara", // üst bar için kısa hali
   addressShortEn: "Sehaş Arena Business Center, Sincan Industrial Estate, Ankara",
